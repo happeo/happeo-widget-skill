@@ -25,6 +25,10 @@ useEffect(() => {
 
 Apply the prefix class to the root element and use it as a scope: `.mw-tile` not `.tile`.
 
+### Light and dark mode
+
+Pages widgets have dark and light modes which is set automatically based on the background the widget is rendered on. The widget inherits a css variable `color-scheme` that defines if the widget should be rendered in a dark or light mode. Ensure that the styles incorporate dark/light mode handling in styles either by always setting a specific background color to the widget or complying with the `color-scheme`.
+
 ## Valid HTML in Lists
 
 When rendering a list of links, `<a>` must live **inside** `<li>`, not wrap it:
