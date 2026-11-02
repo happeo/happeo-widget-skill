@@ -15,8 +15,8 @@ useEffect(() => {
     const el = document.createElement("style");
     el.id = styleId;
     el.textContent = `
-      .mw-tile:hover { background-color: #f0f6ff; }
-      .mw-input:focus { outline: none; border-color: #1d4ed8; }
+      .mw-tile:hover { background-color: var(--happeo-color-surface-alt, #f5f6fa); }
+      .mw-input:focus { outline: none; border-color: var(--happeo-color-accent, #23cfb1); }
     `;
     document.head.appendChild(el);
   }
@@ -25,9 +25,13 @@ useEffect(() => {
 
 Apply the prefix class to the root element and use it as a scope: `.mw-tile` not `.tile`.
 
+### Brand colours and fonts
+
+Use the `--happeo-*` brand tokens for every colour and font, always with a fallback: `var(--happeo-color-accent, #23cfb1)`. They match the widget to the page's branding. See **`references/brand-tokens.md`** for the token list, rules and examples.
+
 ### Light and dark mode
 
-Pages widgets have dark and light modes which is set automatically based on the background the widget is rendered on. The widget inherits a css variable `color-scheme` that defines if the widget should be rendered in a dark or light mode. Ensure that the styles incorporate dark/light mode handling in styles either by always setting a specific background color to the widget or complying with the `color-scheme`.
+Pages widgets have light and dark modes, set automatically from the background the widget is rendered on (a dark section or a dark style option). The widget inherits the CSS `color-scheme` property. Don't paint the widget's root background; Happeo already paints it. Use the text and surface tokens, which follow `color-scheme` on their own, or `light-dark()` for colours of your own, and never assume a white background.
 
 ## Valid HTML in Lists
 

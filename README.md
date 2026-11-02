@@ -10,6 +10,7 @@ Covers:
 - Happeo Widget SDK setup (`widgetSDK.api.init`, `getJWT`)
 - JWT verification on the server side (`happeoAuth` middleware)
 - Local development with `DEV_MODE` (no live Happeo connection needed)
+- Matching the page's branding with the `--happeo-*` brand tokens, in light and dark mode
 - Building and uploading `bundle.js` to Happeo Admin
 
 ## Installation
